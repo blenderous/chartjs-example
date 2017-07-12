@@ -1,0 +1,29 @@
+{
+  "name": "fusionchart-example",
+  "homepage": "https://github.com/blenderous/fusionchart-example",
+  "authors": [
+    "harish <hpone.n.only@gmail.com>"
+  ],
+  "description": "sample application to try fusion charts",
+  "main": "index.html",
+  "keywords": [
+    "json",
+    "html",
+    "javascript",
+    "angular"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fusioncharts": "^3.12.1",
+    "angular": "^1.6.5",
+    "angular-fusioncharts": "^0.0.2"
+  }
+}

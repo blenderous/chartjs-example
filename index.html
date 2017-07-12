@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>State-wise number of schools</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+</head>
+<body>
+	<div ng-app="myApp" class="container">
+		<div ng-controller="MyController">
+	    <div fusioncharts
+	       width="600"
+	       height="400"
+	       type="column2d"
+	       dataSource="" >
+	    </div>
+	    <fc-chart fc-chart-type="Bar2D" fc-data="myDataSource" width="600" height="400">
+		</div>
+	</div>
+	<!-- gist url: https://gist.github.com/blenderous/62587ed25a505d6c858177d01e2eae7f -->
+	<script type="text/javascript" src="/bower_components/fusioncharts/fusioncharts.js"></script>
+	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-fusioncharts/dist/angular-fusioncharts.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
