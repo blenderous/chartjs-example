@@ -6,20 +6,14 @@
 </head>
 <body>
 	<div ng-app="myApp" class="container">
-		<div ng-controller="MyController">
-	    <div fusioncharts
-	       width="600"
-	       height="400"
-	       type="column2d"
-	       dataSource="" >
-	    </div>
-	    <fc-chart fc-chart-type="Bar2D" fc-data="myDataSource" width="600" height="400">
+		<div ng-controller="DonutCtrl">
+			<canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels">
+			</canvas> 
 		</div>
 	</div>
-	<!-- gist url: https://gist.github.com/blenderous/62587ed25a505d6c858177d01e2eae7f -->
-	<script type="text/javascript" src="/bower_components/fusioncharts/fusioncharts.js"></script>
 	<script type="text/javascript" src="/bower_components/angular/angular.js"></script>
-	<script type="text/javascript" src="/bower_components/angular-fusioncharts/dist/angular-fusioncharts.js"></script>
+	<script type="text/javascript" src="/bower_components/chart.js/dist/Chart.min.js"></script>
+	<script type="text/javascript" src="/bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 </body>
 </html>
