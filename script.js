@@ -1,34 +1,34 @@
 angular.module("myApp", ["chart.js"])
-.config(function($sceDelegateProvider) {
- $sceDelegateProvider.resourceUrlWhitelist([
-   // Allow same origin resource loads.
-   'self',
-   // Allow loading from our assets domain.  Notice the difference between * and **.
-   'https://gist.github.com/blenderous/**']);
- })
-.controller("DonutCtrl", function ($scope, $http) {
+.controller("dataCtrl", function ($scope, $http) {
   
-  // labels
-  $scope.labels = ["Download Sales", "In-Store Sales", "Mail-Order Sales"];
-  // data
-  $scope.data = [300, 500, 100];
-
-  $scope.stateData = [];
-
+  $scope.tableData = [];
   $scope.error = "";
+  $scope.graphData = [];
+  $scope.graphLabels = [];
+
+  $scope.options = {
+  	categoryPercentage : 0.9,
+  	barPercentage : 0.1
+  }
 
   // Simple POST request example:
 	$http({
 	  method: 'GET',
-	  url: 'https://gist.github.com/blenderous/62587ed25a505d6c858177d01e2eae7f#file-statewise-shool-information-json'
+	  url: '/data/school-data.json'
 	}).then(function successCallback(response) {
-	    // this callback will be called asynchronously
-	    // when the response is available
-	    $scope.stateData = response.data;
-	  }, function errorCallback(response) {
-	    // called asynchronously if an error occurs
-	    // or server returns response with an error status.
-	    $scope.error = response;
-	  });
+    // this callback will be called asynchronously
+    // when the response is available
+    $scope.tableData = response.data;
+    
+    for (var i = 0; i <= response.data.data.length - 1; i++) {
+    	$scope.graphData.push(response.data.data[i][6]);
+    	$scope.graphLabels.push(response.data.data[i][1]);
+    }
+
+  }, function errorCallback(response) {
+    // called asynchronously if an error occurs
+    // or server returns response with an error status.
+    $scope.error = response;
+  });
 
 });
