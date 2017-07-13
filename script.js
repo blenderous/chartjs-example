@@ -14,7 +14,7 @@ angular.module("myApp", ["chart.js"])
   // Simple POST request example:
 	$http({
 	  method: 'GET',
-	  url: 'data/school-data.json'
+	  url: 'dist/data/school-data.json'
 	}).then(function successCallback(response) {
     // this callback will be called asynchronously
     // when the response is available
